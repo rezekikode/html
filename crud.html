@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Single Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4cae4c;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD Application</h1>
+        <form id="crud-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="age" placeholder="Age" required>
+            <button type="submit">Add</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="crud-tbody">
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('crud-form');
+            const tbody = document.getElementById('crud-tbody');
+            let editIndex = null;
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const age = document.getElementById('age').value;
+
+                if (editIndex === null) {
+                    addRow(name, age);
+                } else {
+                    updateRow(editIndex, name, age);
+                }
+
+                form.reset();
+                editIndex = null;
+            });
+
+            function addRow(name, age) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${name}</td>
+                    <td>${age}</td>
+                    <td>
+                        <button type="button" onclick="editRow(this)">Edit</button>
+                        <button type="button" onclick="deleteRow(this)">Delete</button>
+                    </td>
+                `;
+                row.addEventListener('dblclick', function() {
+                    document.getElementById('name').value = row.children[0].innerText;
+                    document.getElementById('age').value = row.children[1].innerText;
+                    editIndex = Array.from(tbody.children).indexOf(row);
+                });
+                tbody.appendChild(row);
+            }
+
+            window.editRow = function(button) {
+                const row = button.parentElement.parentElement;
+                document.getElementById('name').value = row.children[0].innerText;
+                document.getElementById('age').value = row.children[1].innerText;
+                editIndex = Array.from(tbody.children).indexOf(row);
+            };
+
+            function updateRow(index, name, age) {
+                const row = tbody.children[index];
+                row.children[0].innerText = name;
+                row.children[1].innerText = age;
+            }
+
+            window.deleteRow = function(button) {
+                const row = button.parentElement.parentElement;
+                row.remove();
+                editIndex = null;
+            };
+        });
+    </script>
+</body>
+</html>
