@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://www.itprotoday.com/sites/itprotoday.com/files/itpro_nl_15.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Tahoma', sans-serif;
+            color: white;
+        }
+        .login-container {
+            width: 320px;
+            padding: 30px;
+            background-color: rgba(0, 0, 128, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .login-container img {
+            width: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .login-container input[type="text"], .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .login-container input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_Nike.svg/1200px-Logo_Nike.svg.png" alt="User Icon">
+        <form action="#">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
