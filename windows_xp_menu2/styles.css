@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E4E4E4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menu-bar {
+    background-color: #D4D0C8;
+    border-bottom: 1px solid #808080;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    padding: 0;
+    z-index: 1000;
+}
+
+.menu-item > ul > li {
+    padding: 5px 20px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.menu-item > ul > li:hover {
+    background-color: #0A246A;
+    color: #FFFFFF;
+}
+
+.menu-item:hover > ul {
+    display: block;
+}
+
+.menu-item > ul > .menu-item {
+    position: relative;
+}
+
+.menu-item > ul > .menu-item > ul {
+    top: 0;
+    left: 100%;
+}
+
+.menu-bar ul > .menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.menu-bar ul > .menu-item:hover {
+    background-color: #0A246A;
+    color: #FFFFFF;
+}
+
+.mdi-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    margin: 50px 10px 10px 10px; /* Adjusted margin to account for the fixed menu bar */
+    /* top: 40px; */
+}
+
+.mdi-window {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.mdi-window-header {
+    background-color: #0A246A;
+    color: #FFFFFF;
+    padding: 5px;
+    cursor: move;
+}
+
+.mdi-window-content {
+    padding: 10px;
+    overflow: auto;
+}
+
+.status-bar {
+    background-color: #D4D0C8;
+    border-top: 1px solid #808080;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-bar p {
+    margin: 0;
+}

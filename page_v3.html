@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML Page Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, main, footer, .dynamic-block {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ddd;
+        }
+        header {
+            background-color: #f8f9fa;
+        }
+        nav {
+            background-color: #e9ecef;
+        }
+        main {
+            background-color: #ffffff;
+        }
+        footer {
+            background-color: #f1f1f1;
+        }
+        .dynamic-block {
+            background-color: #e0f7fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Block -->
+    <header>
+        <h1>My Website</h1>
+        <p>Welcome to my website</p>
+    </header>
+
+    <!-- Navigation Block -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Block -->
+    <main>
+        <h2>Main Content</h2>
+        <p>This is the main content area where you can add your page's content.</p>
+    </main>
+
+    <!-- Dynamic Block Container -->
+    <div id="dynamic-block-container">
+        <!-- Dynamic blocks will be added here -->
+    </div>
+
+    <!-- Footer Block -->
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to add dynamic blocks -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('dynamic-block-container');
+
+            function addBlock() {
+                const newBlock = document.createElement('div');
+                newBlock.className = 'dynamic-block';
+                newBlock.innerHTML = `
+                    <h3>Dynamic Block</h3>
+                    <p>This is a dynamically added block.</p>
+                    <button class="remove-button">Remove Block</button>
+                `;
+                container.appendChild(newBlock);
+            }
+
+            function removeBlock(button) {
+                const block = button.parentNode;
+                block.parentNode.removeChild(block);
+            }
+
+            // Event delegation for remove buttons
+            container.addEventListener('click', function(event) {
+                if (event.target && event.target.classList.contains('remove-button')) {
+                    removeBlock(event.target);
+                }
+            });
+
+            // Add initial block
+            addBlock();
+
+            // Add a button to add more blocks
+            const addButton = document.createElement('button');
+            addButton.textContent = 'Add Block';
+            addButton.onclick = addBlock;
+            document.body.appendChild(addButton);
+        });
+    </script>
+</body>
+</html>

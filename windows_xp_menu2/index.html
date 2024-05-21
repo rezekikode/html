@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Menu Bar UI with MDI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-bar">
+        <ul>
+            <li class="menu-item">File
+                <ul class="dropdown">
+                    <li onclick="openWindow()">New Window</li>
+                    <li>Open</li>
+                    <li>Save</li>
+                    <li class="menu-item">Export
+                        <ul class="dropdown">
+                            <li>PDF</li>
+                            <li>Word</li>
+                            <li>Excel</li>
+                        </ul>
+                    </li>
+                    <li>Exit</li>
+                </ul>
+            </li>
+            <li class="menu-item">Edit
+                <ul class="dropdown">
+                    <li>Undo</li>
+                    <li>Redo</li>
+                    <li>Cut</li>
+                    <li>Copy</li>
+                    <li>Paste</li>
+                </ul>
+            </li>
+            <li class="menu-item">View
+                <ul class="dropdown">
+                    <li>Toolbars</li>
+                    <li>Status Bar</li>
+                </ul>
+            </li>
+            <li class="menu-item">Favorites
+                <ul class="dropdown">
+                    <li>Add to Favorites</li>
+                    <li>Organize Favorites</li>
+                </ul>
+            </li>
+            <li class="menu-item">Tools
+                <ul class="dropdown">
+                    <li>Internet Options</li>
+                    <li>Manage Add-ons</li>
+                </ul>
+            </li>
+            <li class="menu-item">Help
+                <ul class="dropdown">
+                    <li>Help Topics</li>
+                    <li>About</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="mdi-container">
+        <!-- MDI windows will be added here -->
+    </div>
+    <div class="status-bar">
+        <p>Status Bar: Ready</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
