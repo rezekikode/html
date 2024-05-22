@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Application</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>ERP Application</h1>
+        <div class="datetime" id="datetime"></div>
+    </header>
+    <nav class="menu-bar">
+        <ul class="menu">
+            <li class="menu-item"><a href="#">Dashboard</a></li>
+            <li class="menu-item"><a href="#">Sales</a>
+                <ul class="submenu">
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Invoices</a></li>
+                    <li><a href="#">Customers</a></li>
+                    <li><a href="#">Sales Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Purchasing</a>
+                <ul class="submenu">
+                    <li><a href="#">Suppliers</a></li>
+                    <li><a href="#">Purchase Orders</a></li>
+                    <li><a href="#">Receipts</a></li>
+                    <li><a href="#">Purchase Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Inventory</a>
+                <ul class="submenu">
+                    <li><a href="#">Stock</a></li>
+                    <li><a href="#">Warehouse</a></li>
+                    <li><a href="#">Transfers</a></li>
+                    <li><a href="#">Inventory Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Manufacturing</a>
+                <ul class="submenu">
+                    <li><a href="#">Work Orders</a></li>
+                    <li><a href="#">Bill of Materials</a></li>
+                    <li><a href="#">Production Planning</a></li>
+                    <li><a href="#">Manufacturing Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">HR</a>
+                <ul class="submenu">
+                    <li><a href="#">Employees</a></li>
+                    <li><a href="#">Payroll</a></li>
+                    <li><a href="#">Attendance</a></li>
+                    <li><a href="#">HR Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Finance</a>
+                <ul class="submenu">
+                    <li><a href="#">Accounts</a></li>
+                    <li><a href="#">Transactions</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Budgets</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">CRM</a>
+                <ul class="submenu">
+                    <li><a href="#">Leads</a></li>
+                    <li><a href="#">Opportunities</a></li>
+                    <li><a href="#">Customers</a></li>
+                    <li><a href="#">CRM Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Project Management</a>
+                <ul class="submenu">
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Timesheets</a></li>
+                    <li><a href="#">Project Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Reports</a>
+                <ul class="submenu">
+                    <li><a href="#">Sales Reports</a></li>
+                    <li><a href="#">Purchase Reports</a></li>
+                    <li><a href="#">Inventory Reports</a></li>
+                    <li><a href="#">Financial Reports</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="#">Settings</a>
+                <ul class="submenu">
+                    <li><a href="#">User Management</a></li>
+                    <li><a href="#">Roles & Permissions</a></li>
+                    <li><a href="#">System Settings</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="content">
+        <p>This is the content area. You can add more elements here to simulate a Windows XP interface.</p>
+    </main>
+    <footer class="status-bar">
+        <div class="status-left">Logged in as: User</div>
+        <div class="status-center">
+            <div class="marquee-container">
+                <marquee behavior="scroll" direction="left" id="marquee">This is a scrolling text for information...</marquee>
+            </div>
+        </div>
+        <div class="status-right" id="ip-address">IP: 192.168.1.1</div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
