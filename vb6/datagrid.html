@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataGrid VB6 Style</title>
+    <style>
+        .vb6-datagrid {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .vb6-datagrid th, .vb6-datagrid td {
+            border: 1px solid #a9a9a9;
+            padding: 4px;
+            text-align: left;
+            background-color: #f0f0f0;
+        }
+
+        .vb6-datagrid th {
+            background-color: #d4d0c8;
+            border-bottom: 2px solid #a9a9a9;
+        }
+
+        .vb6-datagrid tr:nth-child(even) {
+            background-color: #e6e6e6;
+        }
+
+        .vb6-datagrid tr:hover {
+            background-color: #c0c0c0;
+        }
+    </style>
+</head>
+<body>
+    <table class="vb6-datagrid">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1, Cell 1</td>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+            </tr>
+            <tr>
+                <td>Row 3, Cell 1</td>
+                <td>Row 3, Cell 2</td>
+                <td>Row 3, Cell 3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
