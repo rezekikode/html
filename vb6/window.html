@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VB6 Style Window with Menu and Status Bar</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #007acc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .vb6-window {
+            width: 500px;
+            border: 1px solid #808080;
+            background-color: #c0c0c0;
+            box-shadow: 2px 2px 2px #000000;
+            position: relative;
+        }
+
+        .vb6-window-header {
+            background-color: #000080;
+            color: white;
+            padding: 2px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #000000;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000080;
+        }
+
+        .vb6-window-title {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .vb6-window-controls {
+            display: flex;
+        }
+
+        .vb6-window-controls button {
+            width: 16px;
+            height: 14px;
+            background-color: #c0c0c0;
+            border: 1px solid #808080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 2px;
+            padding: 0;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .vb6-window-controls button:hover {
+            background-color: #808080;
+        }
+
+        .vb6-window-controls button:focus {
+            outline: none;
+        }
+
+        .vb6-menu-bar {
+            background-color: #c0c0c0;
+            border: 1px solid #808080;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+            display: flex;
+            position: relative;
+        }
+
+        .vb6-menu-item {
+            padding: 2px 8px;
+            margin: 0;
+            background-color: #c0c0c0;
+            border: 1px solid #c0c0c0;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .vb6-menu-item:hover {
+            background-color: #000080;
+            color: white;
+            box-shadow: inset 1px 1px 0 #000080, inset -1px -1px 0 #ffffff;
+        }
+
+        .vb6-menu-item:focus {
+            outline: none;
+        }
+
+        .vb6-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #c0c0c0;
+            border: 1px solid #808080;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+            z-index: 1000;
+        }
+
+        .vb6-submenu .vb6-menu-item {
+            white-space: nowrap;
+        }
+
+        .vb6-menu-item:hover .vb6-submenu {
+            display: block;
+        }
+
+        .vb6-window-body {
+            padding: 10px;
+            border: 1px solid #808080;
+            border-top: none;
+            border-bottom: none;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .vb6-status-bar {
+            background-color: #c0c0c0;
+            border: 1px solid #808080;
+            border-top: none;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+            padding: 2px 5px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vb6-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vb6-form-group {
+            margin-bottom: 10px;
+        }
+
+        .vb6-label {
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .vb6-input, .vb6-textarea, .vb6-select, .vb6-listbox {
+            font-size: 12px;
+            padding: 2px;
+            border: 1px solid #808080;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+            background-color: #ffffff;
+        }
+
+        .vb6-button {
+            font-size: 12px;
+            padding: 2px 5px;
+            border: 1px solid #808080;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+            background-color: #c0c0c0;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .vb6-button:hover {
+            background-color: #808080;
+        }
+
+        .vb6-button-group {
+            display: flex;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="vb6-window">
+        <div class="vb6-window-header">
+            <span class="vb6-window-title">VB6 Window</span>
+            <div class="vb6-window-controls">
+                <button>-</button>
+                <button>☐</button>
+                <button>X</button>
+            </div>
+        </div>
+        <div class="vb6-menu-bar">
+            <div class="vb6-menu-item">
+                File
+                <div class="vb6-submenu">
+                    <div class="vb6-menu-item">New</div>
+                    <div class="vb6-menu-item">Open</div>
+                    <div class="vb6-menu-item">Save</div>
+                    <div class="vb6-menu-item">Exit</div>
+                </div>
+            </div>
+            <div class="vb6-menu-item">
+                Edit
+                <div class="vb6-submenu">
+                    <div class="vb6-menu-item">Undo</div>
+                    <div class="vb6-menu-item">Redo</div>
+                    <div class="vb6-menu-item">Cut</div>
+                    <div class="vb6-menu-item">Copy</div>
+                    <div class="vb6-menu-item">Paste</div>
+                </div>
+            </div>
+            <div class="vb6-menu-item">
+                View
+                <div class="vb6-submenu">
+                    <div class="vb6-menu-item">Toolbar</div>
+                    <div class="vb6-menu-item">Status Bar</div>
+                </div>
+            </div>
+            <div class="vb6-menu-item">
+                Help
+                <div class="vb6-submenu">
+                    <div class="vb6-menu-item">Help Topics</div>
+                    <div class="vb6-menu-item">About</div>
+                </div>
+            </div>
+        </div>
+        <div class="vb6-window-body">
+            <form class="vb6-form">
+                <div class="vb6-form-group">
+                    <label class="vb6-label" for="textbox">Textbox:</label>
+                    <input class="vb6-input" type="text" id="textbox" />
+                </div>
+                <div class="vb6-form-group">
+                    <label class="vb6-label" for="textarea">Textarea:</label>
+                    <textarea class="vb6-textarea" id="textarea" rows="4"></textarea>
+                </div>
+                <div class="vb6-form-group">
+                    <label class="vb6-label" for="select">Combobox:</label>
+                    <select class="vb6-select" id="select">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+                <div class="vb6-form-group">
+                    <label class="vb6-label" for="listbox">Listbox:</label>
+                    <select class="vb6-listbox" id="listbox" size="4" multiple>
+                        <option>Item 1</option>
+                        <option>Item 2</option>
+                        <option>Item 3</option>
+                        <option>Item 4</option>
+                    </select>
+                </div>
+                <div class="vb6-button-group">
+                    <button type="button" class="vb6-button">OK</button>
+                    <button type="button" class="vb6-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="vb6-status-bar">
+            <span>Status: Ready</span>
+            <span>User: Admin</span>
+        </div>
+    </div>
+</body>
+</html>
