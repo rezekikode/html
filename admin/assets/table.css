@@ -1,0 +1,62 @@
+/* table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #EDEDED; /* Latar belakang abu-abu terang */
+    border: 2px solid #808080; /* Border abu-abu */
+    box-shadow: none; /* Menghilangkan shadow */
+}
+
+table th,
+table td {
+    padding: 2px 4px; /* Padding minimal */
+    border: 1px solid #A0A0A0;
+    text-align: left;
+    font-size: 12px;
+}
+
+table th {
+    background-color: #B0C4DE; /* Latar belakang abu-abu biru terang */
+    color: black;
+    font-size: 12px;
+    padding: 2px 4px; /* Padding minimal */
+}
+
+table td {
+    background-color: #FFFFFF; /* Latar belakang putih untuk sel */
+}
+
+table tr:nth-child(even) td {
+    background-color: #F0F0F0; /* Warna alternatif untuk baris genap */
+}
+
+table td button {
+    padding: 2px 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    height: 24px;
+    width: auto;
+}
+
+table td .crud-edit {
+    background-color: #FFFACD; /* Warna kuning terang */
+    border: 1px solid #FFD700;
+}
+
+table td .crud-edit:hover {
+    background-color: #FFF8B0;
+    border-color: #FFC700;
+}
+
+
+table td .crud-delete {
+    background-color: #F3C1C1; /* Warna merah terang */
+    border: 1px solid #B87A7A;
+}
+
+table td .crud-delete:hover {
+    background-color: #E7A7A7;
+    border-color: #A86A6A;
+}

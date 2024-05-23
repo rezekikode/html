@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const crudUserTableBody = document.querySelector('#crud-user-table tbody');
     const addButton = document.getElementById('add-button');
     const saveButton = document.getElementById('save-button');
+    const cancelButton = document.getElementById('cancel-button');
 
     let crudUsers = JSON.parse(localStorage.getItem('crudUsers')) || [];
     let editIndex = null;
@@ -11,23 +12,49 @@ document.addEventListener('DOMContentLoaded', () => {
         if (state === 'add') {
             addButton.disabled = true;
             saveButton.disabled = false;
+            cancelButton.disabled = false;
             document.getElementById('crud-name').disabled = false;
             document.getElementById('crud-email').disabled = false;
         } else if (state === 'save') {
             addButton.disabled = false;
             saveButton.disabled = true;
+            cancelButton.disabled = true;
             document.getElementById('crud-name').disabled = true;
             document.getElementById('crud-email').disabled = true;
         } else if (state === 'reset') {
             addButton.disabled = false;
             saveButton.disabled = true;
+            cancelButton.disabled = true;
             document.getElementById('crud-name').value = '';
             document.getElementById('crud-email').value = '';
             document.getElementById('crud-edit-index').value = '';
             document.getElementById('crud-name').disabled = true;
             document.getElementById('crud-email').disabled = true;
         }
-    }
+    }    
+
+    function validateUser(name, email) {
+        const errors = [];
+
+        if (!name.trim()) {
+            errors.push("Please enter a valid name.");
+        }
+        if (!validateEmail(email)) {
+            errors.push("Please enter a valid email address.");
+        }
+
+        if (errors.length > 0) {
+            const modalTitle = document.getElementById('modal-title');
+            const list = document.getElementById('modal-list');
+            modalTitle.innerHTML = 'Error(s) Found';
+            list.innerHTML = errors.map(error => `<li>${error}</li>`).join('');
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+            return false;
+        }
+
+        return true;
+    }    
 
     function addUser() {
         crudUserForm.reset();
@@ -52,8 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveUser() {
-        const name = document.getElementById('crud-name').value;
-        const email = document.getElementById('crud-email').value;
+        const name = document.getElementById('crud-name').value.trim();
+        const email = document.getElementById('crud-email').value.trim();
+
+        if (!validateUser(name, email)) {
+            return;
+        }
 
         if (editIndex !== null) {
             crudUsers[editIndex] = { name, email };
@@ -80,15 +111,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="crud-delete" onclick="deleteUser(${index})">Delete</button>
                 </td>
             `;
+            tr.addEventListener('dblclick', () => editUser(index));
             crudUserTableBody.appendChild(tr);
         });
     }
 
     window.editUser = editUser;
-    window.deleteUser = deleteUser;    
+    window.deleteUser = deleteUser;
 
     addButton.addEventListener('click', addUser);
-    saveButton.addEventListener('click', saveUser);
+    saveButton.addEventListener('click', saveUser);  
+    cancelButton.addEventListener('click', () => toggleButtons('reset'));  
 
     renderCrudUsers();
     toggleButtons('reset');

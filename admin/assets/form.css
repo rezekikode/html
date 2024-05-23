@@ -1,0 +1,92 @@
+/* Gaya Form */
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #d4d0c8; /* Warna latar belakang abu-abu terang khas VB6 */
+    padding: 10px;
+    border: 1px solid #808080; /* Border abu-abu */
+    box-shadow: none; /* Menghilangkan shadow */
+}
+
+/* Gaya Label */
+form label {
+    margin-top: 8px; /* Mengurangi margin atas */
+    font-size: 12px;
+    color: #000;
+}
+
+/* Gaya Input */
+form input,
+form select,
+form textarea {
+    padding: 2px 4px; /* Padding minimal */
+    margin-top: 4px; /* Mengurangi margin atas */
+    font-size: 12px;
+    border: 1px solid #A0A0A0;
+    border-radius: 0; /* Menghilangkan border-radius */
+    width: 200px;
+    height: 22px;
+    box-shadow: none; /* Menghilangkan shadow */
+    background-color: #ffffff; /* Latar belakang putih */
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #000; /* Border hitam saat fokus */
+}
+
+form input:disabled,
+form select:disabled,
+form textarea:disabled {
+    cursor: not-allowed;
+    background-color: #E0E0E0; /* Warna latar belakang untuk input disabled */
+}
+
+/* Gaya Tombol */
+form button {
+    padding: 2px 8px; /* Padding minimal */
+    margin-top: 8px; /* Margin atas */
+    font-size: 12px;
+    border: 1px solid #A0A0A0;
+    border-radius: 0; /* Menghilangkan border-radius */
+    background-color: #d4d0c8; /* Warna latar belakang abu-abu terang */
+    cursor: pointer;
+    box-shadow: none; /* Menghilangkan shadow */
+}
+
+form button:hover {
+    background-color: #c0c0c0; /* Warna latar belakang saat hover */
+}
+
+form button:active {
+    background-color: #a0a0a0; /* Warna latar belakang saat aktif */
+}
+
+form button:disabled {
+    cursor: not-allowed;
+    background-color: #E0E0E0; /* Warna latar belakang untuk tombol disabled */
+}
+
+/* Gaya Checkbox dan Radio */
+form input[type="checkbox"],
+form input[type="radio"] {
+    width: auto;
+    height: auto;
+    margin-top: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+form input[type="checkbox"]:disabled,
+form input[type="radio"]:disabled {
+    cursor: not-allowed;
+    background-color: #E0E0E0; /* Warna latar belakang untuk checkbox/radio disabled */
+}
+
+/* Gaya Textarea */
+form textarea {
+    height: auto; /* Tinggi otomatis */
+    resize: vertical; /* Mengizinkan resize vertikal */
+}

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERP Application</title>
     <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="assets/crud-styles.css">
+    <link rel="stylesheet" href="assets/form.css">
+    <link rel="stylesheet" href="assets/table.css">
+    <link rel="stylesheet" href="assets/button.css">
+    <link rel="stylesheet" href="assets/modal.css">
 </head>
 
 <body>
@@ -17,7 +20,7 @@
     </header>
     <nav class="menu-bar">
         <ul class="menu">
-            <li class="menu-item"><a href="#">Dashboard</a></li>
+            <li class="menu-item"><a href="index.html">Dashboard</a></li>
             <li class="menu-item"><a href="#">Sales</a>
                 <ul class="submenu">
                     <li><a href="#">Orders</a></li>
@@ -92,7 +95,7 @@
             </li>
             <li class="menu-item"><a href="#">Settings</a>
                 <ul class="submenu">
-                    <li><a href="#">User Management</a></li>
+                    <li><a href="crud-user.html">User Management</a></li>
                     <li><a href="#">Roles & Permissions</a></li>
                     <li><a href="#">System Settings</a></li>
                 </ul>
@@ -102,18 +105,19 @@
     <main class="content">
         <h2>Manage Users</h2>
         <div class="button-group">
-            <button id="add-button" class="xp-button add-button">Add</button>
-            <button id="edit-button" class="xp-button edit-button" disabled>Edit</button>
-            <button id="save-button" class="xp-button save-button" disabled>Save</button>
+            <button id="add-button" class="add-button">Add</button>
+            <!-- <button id="edit-button" class="edit-button" disabled>Edit</button> -->
+            <button id="save-button" class="save-button" disabled>Save</button>
+            <button id="cancel-button" class="cancel-button" disabled>Cancel</button>
         </div>
-        <form id="crud-user-form" class="xp-form">
+        <form id="crud-user-form">
             <input type="hidden" id="crud-edit-index">
             <label for="crud-name">Name:</label>
             <input type="text" id="crud-name" required disabled>
             <label for="crud-email">Email:</label>
             <input type="email" id="crud-email" required disabled>
         </form>
-        <table id="crud-user-table" class="xp-table">
+        <table id="crud-user-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -123,6 +127,13 @@
             </thead>
             <tbody></tbody>
         </table>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2 id="modal-title">Modal</h2>
+                <ul id="modal-list"></ul>
+            </div>
+        </div>
     </main>
     <footer class="status-bar">
         <div class="status-left">Logged in as: User</div>
@@ -136,7 +147,8 @@
     </footer>
 
     <script src="assets/script.js"></script>
-    <script src="assets/crud-script.js"></script>
+    <script src="assets/crud-user.js"></script>
+    <script src="assets/modal.js"></script>
 </body>
 
 </html>
