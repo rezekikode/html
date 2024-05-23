@@ -1,0 +1,32 @@
+body {
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.button-container {
+    padding: 10px;
+    background-color: #C0C0C0;
+    border: 2px solid #FFFFFF;
+    box-shadow: inset 2px 2px #808080, inset -2px -2px #FFFFFF;
+}
+
+.win98-button {
+    font-family: 'Microsoft Sans Serif', sans-serif;
+    font-size: 12px;
+    color: #000000;
+    background-color: #C0C0C0;
+    border: 2px solid #808080;
+    padding: 2px 8px;
+    cursor: pointer;
+    box-shadow: 1px 1px 0 #FFFFFF, -1px -1px 0 #000000;
+}
+
+.win98-button:active {
+    border: 2px solid #000000;
+    box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #000000;
+    background-color: #A0A0A0;
+}
