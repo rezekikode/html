@@ -7,31 +7,44 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4); /* Latar belakang transparan hitam */
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    background-color: #D4D0C8; /* Latar belakang abu-abu terang mirip VB6 */
+    margin: 10% auto; /* Margin atas untuk meniru posisi modal VB6 */
+    padding: 10px; /* Padding untuk meniru ukuran padding VB6 */
+    border: 1px solid #A0A0A0; /* Border abu-abu */
+    width: 50%; /* Lebar modal untuk meniru ukuran VB6 */
     position: relative; /* Menetapkan posisi relatif */
+    font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif; /* Font Visual Basic 6 */
+    font-size: 8pt; /* Ukuran font untuk meniru modal VB6 */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2); /* Efek bayangan */
 }
 
 .modal-close {
-    color: #aaa;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px; /* Jarak dari tepi */
-    font-size: 28px;
+    top: 5px;
+    right: 5px;
+    font-size: 8pt; /* Ukuran font VB6 */
     font-weight: bold;
     cursor: pointer;
+    font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif; /* Font Visual Basic 6 */
+    width: 20px; /* Lebar tombol */
+    height: 20px; /* Tinggi tombol */
+    background-color: #D4D0C8; /* Latar belakang mirip VB6 */
+    color: black;
+    border: 1px solid #A0A0A0; /* Border abu-abu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px #FFFFFF inset, -1px -1px 1px #A0A0A0 inset; /* Efek tombol */
 }
 
 .modal-close:hover,
 .modal-close:focus {
-    color: black;
+    background-color: #B0B0B0; /* Warna latar belakang saat di-hover */
+    color: red;
     text-decoration: none;
+    border: 1px solid #808080; /* Border saat di-hover */
 }

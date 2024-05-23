@@ -49,8 +49,8 @@ body {
     background-color: #C0C0C0;
     padding: 20px;
     border: 2px solid #A0A0A0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    box-shadow: none; /* Remove shadow to match VB6 style */
+    border-radius: 0; /* Remove border-radius to match VB6 style */
     width: 300px;
     text-align: center;
     margin-top: 70px; /* Add margin to position below the header */
@@ -75,6 +75,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+/* Komponen Visual Basic 6 untuk Form */
 .form-group {
     margin-bottom: 15px;
     width: 100%;
@@ -82,27 +83,40 @@ body {
 }
 .form-group label {
     font-size: 10pt; /* Set the font size to match Windows XP */
+    display: block;
+    margin-bottom: 5px;
 }
 .form-group input {
     width: 100%;
     padding: 5px;
     font-size: 10pt; /* Set the font size to match Windows XP */
-    border: 1px solid #A0A0A0;
-    border-radius: 3px;
+    border: 2px inset #E0E0E0; /* VB6-like inset border */
+    border-radius: 0;
     box-sizing: border-box;
+    background-color: #F0F0F0; /* Light grey background */
+    color: #000;
+}
+.form-group input:focus {
+    border: 2px inset #A0A0A0; /* Change border color on focus */
+    background-color: #FFF; /* White background on focus */
 }
 .form-group button {
-    width: 100%;
-    padding: 10px;
+    width: auto;
+    padding: 5px 10px;
     font-size: 10pt; /* Set the font size to match Windows XP */
-    background-color: #3A6EA5;
-    color: white;
-    border: none;
-    border-radius: 3px;
+    background-color: #C0C0C0;
+    color: black;
+    border: 2px outset #E0E0E0; /* VB6-like outset border */
     cursor: pointer;
+    margin-right: 5px;
+    box-shadow: none; /* Remove shadow to match VB6 style */
+    border-radius: 0; /* Remove border-radius to match VB6 style */
 }
 .form-group button:hover {
-    background-color: #2a4e7a;
+    background-color: #A0A0A0; /* Darker grey on hover */
+}
+.form-group button:active {
+    border: 2px inset #A0A0A0; /* Inset border on click */
 }
 .forgot-password {
     margin-top: 15px;

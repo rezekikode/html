@@ -4,8 +4,9 @@ form {
     flex-direction: column;
     background-color: #d4d0c8; /* Warna latar belakang abu-abu terang khas VB6 */
     padding: 10px;
-    border: 1px solid #808080; /* Border abu-abu */
-    box-shadow: none; /* Menghilangkan shadow */
+    border: 2px groove threedface; /* Border groove khas VB6 */
+    box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #808080; /* Shadow inset */
+    font-family: Tahoma, sans-serif; /* Font default VB6 */
 }
 
 /* Gaya Label */
@@ -22,11 +23,11 @@ form textarea {
     padding: 2px 4px; /* Padding minimal */
     margin-top: 4px; /* Mengurangi margin atas */
     font-size: 12px;
-    border: 1px solid #A0A0A0;
+    border: 2px inset #A0A0A0; /* Border inset khas VB6 */
     border-radius: 0; /* Menghilangkan border-radius */
     width: 200px;
     height: 22px;
-    box-shadow: none; /* Menghilangkan shadow */
+    box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #808080; /* Shadow inset */
     background-color: #ffffff; /* Latar belakang putih */
 }
 
@@ -34,7 +35,7 @@ form input:focus,
 form select:focus,
 form textarea:focus {
     outline: none;
-    border-color: #000; /* Border hitam saat fokus */
+    border: 2px inset #000; /* Border inset hitam saat fokus */
 }
 
 form input:disabled,
@@ -49,11 +50,11 @@ form button {
     padding: 2px 8px; /* Padding minimal */
     margin-top: 8px; /* Margin atas */
     font-size: 12px;
-    border: 1px solid #A0A0A0;
+    border: 2px outset #A0A0A0; /* Border outset khas VB6 */
     border-radius: 0; /* Menghilangkan border-radius */
     background-color: #d4d0c8; /* Warna latar belakang abu-abu terang */
     cursor: pointer;
-    box-shadow: none; /* Menghilangkan shadow */
+    box-shadow: inset 1px 1px 0px #ffffff, inset -1px -1px 0px #808080; /* Shadow inset */
 }
 
 form button:hover {
@@ -61,6 +62,7 @@ form button:hover {
 }
 
 form button:active {
+    border: 2px inset #A0A0A0; /* Border inset saat aktif */
     background-color: #a0a0a0; /* Warna latar belakang saat aktif */
 }
 

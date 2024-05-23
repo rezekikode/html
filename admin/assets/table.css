@@ -3,24 +3,26 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    background-color: #EDEDED; /* Latar belakang abu-abu terang */
-    border: 2px solid #808080; /* Border abu-abu */
+    background-color: #E3E3E3; /* Latar belakang abu-abu terang */
+    border: 1px solid #A0A0A0; /* Border abu-abu */
     box-shadow: none; /* Menghilangkan shadow */
+    font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif; /* Font Visual Basic 6 */
 }
 
 table th,
 table td {
-    padding: 2px 4px; /* Padding minimal */
-    border: 1px solid #A0A0A0;
+    padding: 2px 6px; /* Padding minimal */
+    border: 1px solid #A0A0A0; /* Border abu-abu */
     text-align: left;
-    font-size: 12px;
+    font-size: 10pt; /* Ukuran font VB6 */
 }
 
 table th {
-    background-color: #B0C4DE; /* Latar belakang abu-abu biru terang */
+    background-color: #D4D0C8; /* Latar belakang abu-abu muda mirip VB6 */
     color: black;
-    font-size: 12px;
-    padding: 2px 4px; /* Padding minimal */
+    font-weight: normal; /* Font normal, bukan tebal */
+    padding: 2px 6px; /* Padding minimal */
+    text-align: center; /* Header rata tengah */
 }
 
 table td {
@@ -28,35 +30,43 @@ table td {
 }
 
 table tr:nth-child(even) td {
-    background-color: #F0F0F0; /* Warna alternatif untuk baris genap */
+    background-color: #F3F3F3; /* Warna alternatif untuk baris genap */
 }
 
 table td button {
-    padding: 2px 8px;
-    border: none;
+    padding: 1px 4px; /* Padding minimal */
+    border: 1px solid #808080; /* Border abu-abu */
     cursor: pointer;
-    font-size: 12px;
-    height: 24px;
+    font-size: 10pt; /* Ukuran font VB6 */
+    height: 20px; /* Tinggi tombol */
     width: auto;
+    font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif; /* Font Visual Basic 6 */
+    background-color: #D4D0C8; /* Latar belakang abu-abu muda */
+    color: black;
+    box-shadow: 1px 1px 1px #FFFFFF inset, -1px -1px 1px #A0A0A0 inset; /* Efek tombol tekan */
+}
+
+table td button:active {
+    background-color: #B0B0B0; /* Warna latar belakang saat ditekan */
+    box-shadow: -1px -1px 1px #FFFFFF inset, 1px 1px 1px #A0A0A0 inset; /* Efek tombol ditekan */
 }
 
 table td .crud-edit {
     background-color: #FFFACD; /* Warna kuning terang */
-    border: 1px solid #FFD700;
+    border: 1px solid #FFD700; /* Border kuning */
 }
 
 table td .crud-edit:hover {
-    background-color: #FFF8B0;
-    border-color: #FFC700;
+    background-color: #FFF8B0; /* Hover kuning lebih terang */
+    border-color: #FFC700; /* Hover border kuning lebih terang */
 }
-
 
 table td .crud-delete {
     background-color: #F3C1C1; /* Warna merah terang */
-    border: 1px solid #B87A7A;
+    border: 1px solid #B87A7A; /* Border merah */
 }
 
 table td .crud-delete:hover {
-    background-color: #E7A7A7;
-    border-color: #A86A6A;
+    background-color: #E7A7A7; /* Hover merah lebih terang */
+    border-color: #A86A6A; /* Hover border merah lebih terang */
 }
